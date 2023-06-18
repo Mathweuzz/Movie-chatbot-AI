@@ -82,3 +82,69 @@ Este código demonstra um exemplo de treinamento de um chatbot utilizando a bibl
 
 Certifique-se de ter instalado as bibliotecas necessárias e execute o código em um ambiente Python compatível.
 
+## Importação de pacotes necessários em chatbox.py:
+
+1. O código começa importando os pacotes necessários para o funcionamento adequado do script. Esses pacotes são utilizados para diferentes funcionalidades, como geração de valores aleatórios, manipulação de arquivos JSON, processamento de texto e criação de modelos de aprendizado de máquina.
+
+2. Definição do dispositivo:
+
+   - Nesta parte do código, é verificado se a GPU está disponível. Caso esteja, o dispositivo é definido como 'cuda', caso contrário, é definido como 'cpu'. Essa verificação é importante para aproveitar os recursos da GPU quando possível e, assim, acelerar o processamento.
+
+3. Leitura do arquivo JSON:
+
+   - O código faz a leitura de um arquivo JSON chamado 'intents.json'. Esse arquivo contém informações sobre as intenções do chatbot, como tags, perguntas e respostas associadas. A leitura do arquivo é feita usando a biblioteca json, que permite carregar o conteúdo do arquivo em uma estrutura de dados adequada para ser utilizada posteriormente.
+
+# Em tf-idf.py
+Importe os pacotes necessários:
+
+- `pandas`: Biblioteca para manipulação de dados tabulares.
+- `TfidfVectorizer` da biblioteca `sklearn.feature_extraction.text`: Usado para transformar texto em vetores de características usando a técnica TF-IDF.
+- `cosine_similarity` da biblioteca `sklearn.metrics.pairwise`: Usado para calcular a similaridade de cosseno entre os vetores de características.
+
+# Carregando os dados
+Carregue os dados de um arquivo CSV chamado 'movies.csv' e armazene-os em um dataframe chamado `movies_data`.
+
+# Selecionando características importantes
+Selecione as características importantes do dataframe `movies_data`. As características selecionadas podem incluir gêneros, palavras-chave, elenco, diretor, título, data de lançamento, entre outros.
+
+# Tratando valores ausentes
+Trate os valores ausentes (NaN) em cada característica selecionada, preenchendo-os com uma string vazia.
+
+# Juntando todas as características selecionadas para análise
+Combine as características selecionadas em uma única string chamada `combined_features`. Isso é feito concatenando as informações das colunas de gêneros, palavras-chave, slogan, elenco e diretor para cada filme.
+
+# Transformando os dados de texto em vetores de características
+Transforme os dados de texto em vetores de características usando o TfidfVectorizer.
+
+# Criando uma lista com todos os nomes de filmes presentes no conjunto de dados
+Crie uma lista com os nomes de todos os filmes presentes no conjunto de dados.
+
+# Similaridade de cosseno
+Calcule a similaridade de cosseno entre os vetores de características.
+
+# Salvando arquivos
+Salve os resultados da similaridade em um arquivo usando o formato Parquet com compressão gzip.
+
+<!-- Carregando e preparando os dados -->
+- Importe os pacotes necessários: `pandas` e `difflib`.
+- Carregue os dados de um arquivo CSV chamado 'movies.csv' e armazene-os em um dataframe chamado `movies_data`.
+- Crie uma lista chamada `list_of_all_titles` contendo todos os títulos dos filmes presentes no conjunto de dados.
+
+<!-- Função para recomendação de filmes -->
+- Defina uma função chamada `movie_rec` que recebe dois parâmetros: `movie_name` e `similarity`.
+- Utilize a função `get_close_matches` do módulo `difflib` para encontrar a correspondência mais próxima para o título do filme fornecido pelo usuário.
+- Se não houver correspondência próxima, retorne uma mensagem informando que o filme não é conhecido.
+- Caso contrário, continue com o processo de recomendação.
+
+<!-- Encontrando filmes semelhantes -->
+- Obtenha o índice do filme correspondente ao título encontrado.
+- Crie uma lista de tuplas contendo o índice do filme e sua pontuação de similaridade.
+- Ordene a lista de filmes semelhantes com base na pontuação de similaridade, em ordem decrescente.
+- Extraia os seis filmes mais similares da lista e obtenha informações como título, data de lançamento e diretor.
+- Formate a mensagem de recomendação com base nos filmes similares encontrados.
+- Retorne a mensagem de recomendação ao usuário.
+
+<!-- Uso da função -->
+- Utilize a função `movie_rec` passando o título do filme fornecido pelo usuário e a matriz de similaridade dos filmes.
+- A função retornará uma mensagem contendo recomendações de filmes semelhantes com base no título fornecido.
+
