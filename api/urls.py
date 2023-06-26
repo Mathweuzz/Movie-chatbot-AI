@@ -26,8 +26,9 @@ similarity = np.array(similarity)
 
 def getResponse(request):
     text = request.GET.get('text')
+    text.replace("%20", " ")
     if text[:6].lower() == 'movie:':
-        message = {'answer': movie_rec(text[6:], similarity)}
+        response = movie_rec(text[6:], similarity)
     else:
         response = get_response(text)
 
