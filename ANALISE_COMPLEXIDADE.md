@@ -1,4 +1,4 @@
-nltk_utils.py ---------------------------------------
+# nltk_utils.py 
 
 O código faz uso da biblioteca NLTK (Natural Language Toolkit) para processamento de linguagem natural. Ele utiliza o algoritmo de stemming de Porter para reduzir as palavras à sua forma raiz.
 
