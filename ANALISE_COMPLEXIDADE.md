@@ -64,8 +64,8 @@ O loop externo for epoch in range(num_epochs) executa num_epochs iterações. Po
 Dentro do loop externo, o loop for (words, labels) in train_loader itera sobre os dados de treinamento em lotes. Suponha que haja k lotes no dataloader. Nesse caso, a complexidade desse loop é O(k).
 Dentro do loop for (words, labels) in train_loader, as operações de treinamento são realizadas, como envio de dados para o dispositivo (CPU ou GPU), cálculo das saídas do modelo, cálculo da perda, retropropagação e atualização dos parâmetros do modelo. A complexidade dessas operações depende do tamanho do lote e do tamanho da camada oculta, mas em geral, podemos considerar que é O(b * h), onde b é o tamanho do lote e h é o tamanho da camada oculta.
 No final, o número de épocas de treinamento é num_epochs e o número de lotes é determinado pelos dados de treinamento. Portanto, a complexidade geral dessa seção é O(num_epochs * k * b * h).
-Em resumo:
 
+Em resumo:
 - A complexidade do carregamento e processamento dos dados é O(n * m * p + m * q).
 - A complexidade da classe ChatDataset é O(1).
 - A complexidade da configuração da rede neural e treinamento é O(num_epochs * k * b * h).
