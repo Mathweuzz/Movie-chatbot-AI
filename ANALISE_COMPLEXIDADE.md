@@ -15,7 +15,7 @@ Em resumo:
 - A função `stem` tem complexidade O(1).
 - A função `bag_of_words` tem complexidade O(n * m).
 
-model.py ------------------------------------------
+# model.py 
 
 A classe `NeuralNet` define uma rede neural com três camadas lineares (`nn.Linear`) intercaladas com funções de ativação ReLU (`nn.ReLU`).
 
@@ -39,7 +39,7 @@ Em resumo:
 - A complexidade da inicialização da classe `NeuralNet` é negligível e pode ser considerada O(1).
 - A complexidade do método `forward` é O(input_size * hidden_size + hidden_size * hidden_size + hidden_size * num_classes).
 
-train_data.py ------------------------------------
+# train_data.py 
 
 A análise de complexidade para o código:
 
@@ -66,11 +66,11 @@ Dentro do loop for (words, labels) in train_loader, as operações de treinament
 No final, o número de épocas de treinamento é num_epochs e o número de lotes é determinado pelos dados de treinamento. Portanto, a complexidade geral dessa seção é O(num_epochs * k * b * h).
 Em resumo:
 
-A complexidade do carregamento e processamento dos dados é O(n * m * p + m * q).
-A complexidade da classe ChatDataset é O(1).
-A complexidade da configuração da rede neural e treinamento é O(num_epochs * k * b * h).
+- A complexidade do carregamento e processamento dos dados é O(n * m * p + m * q).
+- A complexidade da classe ChatDataset é O(1).
+- A complexidade da configuração da rede neural e treinamento é O(num_epochs * k * b * h).
 
-chatbot.py ---------------------------------------
+# chatbot.py 
 
 Aqui está a análise de complexidade para o código fornecido:
 
@@ -94,7 +94,7 @@ Em resumo:
 - A complexidade do carregamento e processamento de dados é O(1).
 - A complexidade da função `get_response` é O(m * q + h + n + r).
 
-tf-idf.py --------------------------------------------------------------
+# tf-idf.py
 
 Aqui está a análise de complexidade para o código:
 
@@ -129,7 +129,7 @@ Em resumo:
 - A complexidade do cálculo da similaridade do cosseno é O(m^2).
 - A complexidade do salvamento de arquivos é O(m^2).
 
-movie_rec_routine.py -----------------------------------
+# movie_rec_routine.py
 
 Aqui está a análise de complexidade para o código fornecido:
 
